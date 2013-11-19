@@ -157,6 +157,8 @@ int main(int argc, char *argv[]) {
                           pFrameRGB->data, pFrameRGB->linesize);
                 SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height, i);
             }
+        }else{ //this due to stop infinite loop,i was working on android it show me stack corruption error
+             i++;
         }
 
         // Free the packet that was allocated by av_read_frame
